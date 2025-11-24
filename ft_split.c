@@ -7,17 +7,14 @@ static	size_t	count_words(const char *s, char delim)
 	char	*next_delim;
 	size_t	word_count;
 
-	if (delim == '\0')
-		return (1);
 	word_count = 0;
 	next_delim = (char *)s;
-	while (next_delim)
+	while (next_delim && *next_delim)
 	{
 		s = next_delim;
-		while (*s == delim)
+		while (*s && *s == delim)
 			++s;
-		if (*s)
-			word_count++;
+		++word_count;
 		next_delim = ft_strchr(s, delim);
 	}
 	return (word_count);
