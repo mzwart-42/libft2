@@ -6,21 +6,22 @@ static int  ft_isspace(int c)
   return ((c >= '\t' && c <= '\r') || c == ' ');
 }
 
-int ft_atoi(const char *str)
+int ft_atoi(const char *nptr)
 {
-  long  res;
   int   is_negative;
+  long  res;
 
   res = 0;
-  while (ft_isspace(*str))
-    ++str;
-  
-  is_negative = (*str == '-');
+  while (ft_isspace(*nptr))
+    ++nptr;
+  is_negative = (*nptr == '-');
   if (is_negative)
-    ++str;
-
-  while (ft_isdigit(*str))
-    res = res * 10 + ((unsigned int)(*str++) - '0');
+    ++nptr;
+  while (ft_isdigit(*nptr))
+	{
+    res = (res * 10) + ((unsigned char)*nptr - '0');
+		nptr++;
+	}
 
   return ((int)res * (-1 * is_negative));
 }

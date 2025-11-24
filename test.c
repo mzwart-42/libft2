@@ -4,7 +4,7 @@
 
 #include <limits.h>
 
-#define CC1 "ls"
+#define CC1 1234
 
 int main()
 {
