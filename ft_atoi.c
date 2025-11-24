@@ -1,24 +1,26 @@
-#include "include/libft.h"
+#include "libft.h"
 
 // isspace according to man: '\t' '\n' '\v' '\f' '\r' ' '
 static int  ft_isspace(int c)
 {
-  return ((c >= '\t' && c <= '\r') || c == ' ');
+	const char WHITE_SPACE_CHARS[6] = {'\t', '\n', '\v', '\f', '\r', ' '};
+
+	return ((int)ft_strchr(WHITE_SPACE_CHARS), c));
 }
 
 int ft_atoi(const char *nptr)
 {
-	int   negation_multiplier;
+	int   is_negative;
 	long  res;
 
 	res = 0;
 	while (ft_isspace(*nptr))
 		++nptr;
-	negation_multiplier = 1;
-	if (*nptr == '-')
+	is_negative = (*nptr == '-' && ++nptr);
+	while (ft_isdigit(*nptr))
 	{
-		negation_multiplier = -1;
-		++nptr;
+		res = (res * 10) + ((unsigned char)*nptr - '0');
+		nptr++;
 	}
 	while (ft_isdigit(*nptr))
 		{
@@ -26,5 +28,5 @@ int ft_atoi(const char *nptr)
 			nptr++;
 		}
 
-	return ((int)res * negation_multiplier);
+	return ((int)res * (is_negative * -2 + 1));
 }
