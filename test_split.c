@@ -19,7 +19,7 @@ int main(int argc,char **argv)
 	int	i;
 
 	if (argc == 2)
-		tabstr = ft_split(argv[1], ' ');
+		tabstr = ft_split(argv[1], 0);
 	if (argc == 3)
 		tabstr = ft_split(argv[1], argv[2][0]);
 	i = 0;
