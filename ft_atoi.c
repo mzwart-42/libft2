@@ -8,20 +8,23 @@ static int  ft_isspace(int c)
 
 int ft_atoi(const char *nptr)
 {
-  int   is_negative;
-  long  res;
+	int   negation_multiplier;
+	long  res;
 
-  res = 0;
-  while (ft_isspace(*nptr))
-    ++nptr;
-  is_negative = (*nptr == '-');
-  if (is_negative)
-    ++nptr;
-  while (ft_isdigit(*nptr))
+	res = 0;
+	while (ft_isspace(*nptr))
+		++nptr;
+	negation_multiplier = 1;
+	if (*nptr == '-')
 	{
-    res = (res * 10) + ((unsigned char)*nptr - '0');
-		nptr++;
+		negation_multiplier = -1;
+		++nptr;
 	}
+	while (ft_isdigit(*nptr))
+		{
+		res = (res * 10) + ((unsigned char)*nptr - '0');
+			nptr++;
+		}
 
-  return ((int)res * (-1 * is_negative));
+	return ((int)res * negation_multiplier);
 }
