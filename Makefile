@@ -62,4 +62,4 @@ endif
 
 .PHONY: all clean fclean re test check-comparison-libft
 
-include $(DEPS)
+# include $(DEPS)
