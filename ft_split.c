@@ -74,12 +74,3 @@ char	**ft_split(char const *s, char c)
 	}
 	return (array);
 }
-
-// int main(int argc, char **argv)
-// {
-// 	char **array;
-// 	if (argc == 2)
-// 		array = ft_split(argv[argc - 1], ' ');
-// 	free(array);
-// 	return 0;
-// }

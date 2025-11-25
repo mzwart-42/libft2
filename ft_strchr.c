@@ -1,11 +1,11 @@
 #include <stddef.h>
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-  while (*s && *s != c)
-    ++s;
-  if (*s == c)
-    return ((char *)s);
-  return (NULL);
+	while (*s && *s != c)
+		++s;
+	if (*s == c)
+		return ((char *)s);
+	return (NULL);
 }
 

@@ -23,31 +23,30 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	size_t	idx;
 
 	idx = 0;
-	while (*s)
+	while (s[idx])
 	{
-		s[idx] = f(idx, s[idx]);
+		f(idx, &s[idx]);
 		++idx;
 	}
-	return (s);
 }
 
-static char	*safe_ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	if (!s)
-		return (NULL);
-	return (ft_strmapi(s, f));
-}
+// static char	*safe_ft_strmapi(char const *s, char (*f)(unsigned int, char))
+// {
+// 	if (!s)
+// 		return (NULL);
+// 	return (ft_strmapi(s, f));
+// }
 
-#ifdef ARE_YOU_SERIOUS_RIGHT_MEOW
-# define ft_strmapi(x) safe_ft_strmapi(x)
-#endif
-
-char	func(unsigned int i, char c)
-{
-	return c + 32;
-}
-
-int main()
-{
-	ft_strmapi("hi", func);
-}
+// #ifdef ARE_YOU_SERIOUS_RIGHT_MEOW
+// # define ft_strmapi(x) safe_ft_strmapi(x)
+// #endif
+//
+// char	func(unsigned int i, char c)
+// {
+// 	return c + 32;
+// }
+//
+// int main()
+// {
+// 	ft_strmapi("hi", func);
+// }

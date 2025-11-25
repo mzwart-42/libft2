@@ -44,19 +44,19 @@ char	*ft_itoa(int n)
 	return (buf);
 }
 
-#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	char	*s;
-	if (argc >= 2)
-	{
-		s = ft_itoa(ft_atoi(argv[1]));
-		printf("\n%s", s);
-		free(s);
-
-		s = ft_itoa(atoi(argv[1]));
-		printf("\n%s", s);
-		free(s);
-	}
-}
+// #include <stdio.h>
+//
+// int	main(int argc, char **argv)
+// {
+// 	char	*s;
+// 	if (argc >= 2)
+// 	{
+// 		s = ft_itoa(ft_atoi(argv[1]));
+// 		printf("\n%s", s);
+// 		free(s);
+//
+// 		s = ft_itoa(atoi(argv[1]));
+// 		printf("\n%s", s);
+// 		free(s);
+// 	}
+// }

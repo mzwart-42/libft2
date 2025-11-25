@@ -3,7 +3,6 @@
 CFLAGS += -Wall -Wextra  -Werror
 CC = cc
 INCLUDE_DIRS = ./include
-
 # [c] do not warn about creation of file
 # [r] eplace existing or insert new file(s) into the archive
 # [U] set time stamps needed for replacement using make's archive(member) function
@@ -27,7 +26,9 @@ ft_strdup.c  \
 ft_split.c   \
 ft_substr.c  \
 ft_strmapi.c \
-ft_put.c     \
+ft_itoa.c    \
+
+# ft_put.c     \
 
 #------------------------------------------------------------#
 INCLUDE_FLAGS = $(addprefix -I, $(INCLUDE_DIRS))
